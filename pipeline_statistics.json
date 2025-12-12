@@ -1,0 +1,40 @@
+{
+  "total_records": 1000,
+  "valid_records": 906,
+  "invalid_records": 94,
+  "duplicates_removed": 0,
+  "missing_values_handled": 150,
+  "transformations_applied": 5,
+  "columns": [
+    "customer_id",
+    "name",
+    "email",
+    "phone",
+    "age",
+    "purchase_amount",
+    "last_purchase",
+    "status",
+    "registration_date",
+    "age_group",
+    "purchase_category"
+  ],
+  "data_types": {
+    "customer_id": "int64",
+    "name": "object",
+    "email": "object",
+    "phone": "object",
+    "age": "float64",
+    "purchase_amount": "float64",
+    "last_purchase": "object",
+    "status": "object",
+    "registration_date": "datetime64[ns]",
+    "age_group": "category",
+    "purchase_category": "category"
+  },
+  "shape": [
+    1000,
+    11
+  ],
+  "memory_usage_mb": 0.39504051208496094,
+  "execution_time": 0.116642
+}
