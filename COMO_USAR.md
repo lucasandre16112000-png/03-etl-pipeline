@@ -57,11 +57,101 @@ Se não funcionar, [instale Python aqui](https://www.python.org/downloads/)
 
 ## 🎯 Executar o Exemplo
 
-### Windows
+### Windows - Opção 1: Usando o Script (Mais Fácil)
 
 ```cmd
 run_example.bat
 ```
+
+Isso é tudo! O script faz tudo automaticamente.
+
+### Windows - Opção 2: Usando CMD (Prompt de Comando)
+
+1. Abra o **Prompt de Comando (CMD)**
+   - Pressione `Win + R`
+   - Digite `cmd`
+   - Pressione Enter
+
+2. Navegue até a pasta do projeto:
+   ```cmd
+   cd C:\Users\SeuUsuario\03-etl-pipeline
+   ```
+   
+   (Substitua `C:\Users\SeuUsuario` pelo caminho real da sua pasta)
+
+3. Crie o ambiente virtual:
+   ```cmd
+   python -m venv venv
+   ```
+
+4. Ative o ambiente virtual:
+   ```cmd
+   venv\Scripts\activate.bat
+   ```
+   
+   Você verá `(venv)` no início da linha - isso significa que está ativado ✅
+
+5. Instale as dependências:
+   ```cmd
+   pip install -r requirements.txt
+   ```
+
+6. Execute o exemplo:
+   ```cmd
+   python example_usage.py
+   ```
+
+7. Quando terminar, desative o ambiente:
+   ```cmd
+   deactivate
+   ```
+
+### Windows - Opção 3: Usando PowerShell
+
+1. Abra o **PowerShell**
+   - Pressione `Win + X`
+   - Clique em "Windows PowerShell"
+   - Ou procure por "PowerShell" no menu Iniciar
+
+2. Navegue até a pasta do projeto:
+   ```powershell
+   cd C:\Users\SeuUsuario\03-etl-pipeline
+   ```
+
+3. Crie o ambiente virtual:
+   ```powershell
+   python -m venv venv
+   ```
+
+4. Ative o ambiente virtual:
+   ```powershell
+   .\venv\Scripts\Activate.ps1
+   ```
+   
+   Se receber erro de permissão, execute:
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+   
+   Depois tente novamente:
+   ```powershell
+   .\venv\Scripts\Activate.ps1
+   ```
+
+5. Instale as dependências:
+   ```powershell
+   pip install -r requirements.txt
+   ```
+
+6. Execute o exemplo:
+   ```powershell
+   python example_usage.py
+   ```
+
+7. Quando terminar, desative o ambiente:
+   ```powershell
+   deactivate
+   ```
 
 ### Linux/Mac
 
@@ -375,9 +465,19 @@ Saída: CSV, JSON, Excel, Parquet
 
 Para verificar se tudo está funcionando:
 
-**Windows:**
+**Windows - Opção 1 (Mais Fácil):**
 ```cmd
 run_tests.bat
+```
+
+**Windows - Opção 2 (CMD):**
+```cmd
+python -m pytest
+```
+
+**Windows - Opção 3 (PowerShell):**
+```powershell
+python -m pytest
 ```
 
 **Linux/Mac:**
@@ -404,3 +504,96 @@ Todos os testes devem passar ✅
 Agora você sabe como usar o Pipeline ETL! Comece com o exemplo e depois adapte para seus dados.
 
 **Boa sorte! 🚀**
+
+---
+
+## 🔧 Troubleshooting - Problemas Comuns
+
+### Problema: "Python não encontrado"
+
+**Solução:**
+1. Instale Python: https://www.python.org/downloads/
+2. IMPORTANTE: Marque "Add Python to PATH" durante a instalação
+3. Reinicie o computador
+4. Tente novamente
+
+---
+
+### Problema: "pip não encontrado" (CMD)
+
+**Solução 1:**
+```cmd
+python -m pip install -r requirements.txt
+```
+
+**Solução 2:**
+- Desinstale Python
+- Reinstale marcando "Add Python to PATH"
+- Reinicie o computador
+
+---
+
+### Problema: "pip não encontrado" (PowerShell)
+
+**Solução:**
+```powershell
+python -m pip install -r requirements.txt
+```
+
+---
+
+### Problema: "Erro de permissão" (PowerShell)
+
+**Solução:**
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Digite Y e pressione Enter quando perguntado.
+
+---
+
+### Problema: "Módulo não encontrado"
+
+**Solução:**
+1. Certifique-se de que está na pasta correta
+2. Certifique-se de que o venv está ativado (deve ver (venv) no prompt)
+3. Instale as dependências novamente:
+   ```cmd
+   pip install -r requirements.txt
+   ```
+
+---
+
+### Problema: "venv não funciona" (PowerShell)
+
+**Solução:**
+1. Execute como Administrador
+2. Execute:
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+3. Tente ativar o venv novamente:
+   ```powershell
+   .\venv\Scripts\Activate.ps1
+   ```
+
+---
+
+### Problema: "Script não roda"
+
+**Solução 1 (CMD):**
+```cmd
+python example_usage.py
+```
+
+**Solução 2 (PowerShell):**
+```powershell
+python example_usage.py
+```
+
+**Solução 3 (Executar como Administrador):**
+- Clique com botão direito em CMD ou PowerShell
+- Selecione "Run as Administrator"
+- Tente novamente
+
